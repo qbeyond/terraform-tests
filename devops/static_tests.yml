@@ -1,0 +1,10 @@
+trigger: none
+
+stages:
+- stage "tflint"
+  desplayName: "tflint - check for "
+  jobs:
+  
+# tflint
+
+# tfsec

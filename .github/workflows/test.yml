@@ -1,0 +1,8 @@
+name: Test
+
+on: 
+  workflow_call:
+
+jobs:
+  static_tests:
+    uses: ./static_test_workflow.yml
