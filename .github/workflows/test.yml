@@ -5,4 +5,4 @@ on:
 
 jobs:
   static_tests:
-    uses: ./static_test_workflow.yml
+    uses: .github/workflows/static_test_workflow.yml
