@@ -8,8 +8,7 @@ on:
 jobs:
   tflint:
     name: TFLint
-    steps: 
-      runs-on: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
