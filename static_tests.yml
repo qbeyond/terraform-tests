@@ -2,7 +2,7 @@ jobs:
   - job: checkout
     steps:
     - checkout: self
-  - job: install_tflint
+  - job: run_tflint
     steps: 
     - task: CmdLine@2
       inputs: 
@@ -10,8 +10,6 @@ jobs:
           echo Curl tflint
 
           curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
-  - job: run_tflint
-    steps:
     - task: CmdLine@2
       inputs:
         script: |
