@@ -5,11 +5,11 @@ jobs:
   - job: curl_tflint_config
     steps:
     - task: CmdLine@2
-          inputs: 
-            script: |
-              echo Curl tflint_config_file
+      inputs: 
+        script: |
+          echo Curl tflint_config_file
 
-              curl -s https://raw.githubusercontent.com/qbeyond/terraform-tests/feature/init/.tflint.hcl | bash
+          curl -s https://raw.githubusercontent.com/qbeyond/terraform-tests/feature/init/.tflint.hcl | bash
   - job: run_tflint
     steps: 
     - task: CmdLine@2
