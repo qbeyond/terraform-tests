@@ -1,20 +1,18 @@
-stages:
-- stage: test
-    jobs:
-      - job: checkout
-        steps:
-        - checkout: self
-      - job: install-tflint
-        steps: 
-        - task: CmdLine@2
-          inputs: 
-            script: |
-              echo Curl tflint
+jobs:
+  - job: checkout
+    steps:
+    - checkout: self
+  - job: install-tflint
+    steps: 
+    - task: CmdLine@2
+      inputs: 
+        script: |
+          echo Curl tflint
 
-              curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
-      - job: run-tflint
-        steps:
-        - task: CmdLine@2
-          inputs:
-            script: |
-              tflint --recursive
+          curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
+  - job: run-tflint
+    steps:
+    - task: CmdLine@2
+      inputs:
+        script: |
+          tflint --recursive
