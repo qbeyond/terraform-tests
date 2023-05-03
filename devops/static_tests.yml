@@ -1,10 +1,23 @@
-trigger: none
+trigger: none 
 
-stages:
-- stage "tflint"
-  desplayName: "tflint - check for "
-  jobs:
-  
-# tflint
+pool:
+  vmImage: ubuntu-latest
 
-# tfsec
+jobs:
+  - job: checkout
+    steps:
+    - checkout: self
+  - job: install-tflint
+    steps: 
+    - task: CmdLine@2
+      inputs: 
+        script: |
+          echo Curl tflint
+
+          curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
+  - job: run-tflint
+    steps:
+    - task: CmdLine@2
+      inputs:
+        script: |
+          tflint --recursive
