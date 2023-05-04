@@ -5,7 +5,7 @@ plugin "terraform" {
   rule "terraform_naming_convention" {
     enabled = true
 
-    custom = "^[aA]$"
+    custom = "^[a-zA-Z]+([_-][a-zA-Z]+)*$"
   }
 }
 
