@@ -11,10 +11,10 @@ jobs:
     - task: CmdLine@2
       inputs:
         script: |
-        echo Look for tflint config
+          echo Look for tflint config
 
-        cd $(Agent.BuildDirectory)
-        ls
+          cd $(Agent.BuildDirectory)
+          ls
     - task: CmdLine@2
       inputs: 
         script: |
