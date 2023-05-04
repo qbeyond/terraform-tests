@@ -1,5 +1,5 @@
 jobs:
-  - job: Checkout_own_repository
+  - job: Run Tflint
     steps:
     - checkout: self
     - task: CmdLine@2
