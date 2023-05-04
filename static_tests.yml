@@ -1,19 +1,17 @@
 jobs:
-  - job: Run_tflint
+  - job: Checkout_own_repository
     steps:
     - checkout: self
+  - job: curl_tflint_config
+    steps:
     - task: CmdLine@2
       inputs: 
         script: |
           echo Curl tflint_config_file
 
           curl -s https://raw.githubusercontent.com/qbeyond/terraform-tests/feature/init/.tflint.hcl -O
-    - task: CmdLine@2
-      inputs:
-        script: |
-          echo Look for tflint config
-          
-          ls -a
+  - job: run_tflint
+    steps: 
     - task: CmdLine@2
       inputs: 
         script: |
