@@ -8,7 +8,7 @@ jobs:
           echo Curl tflint_config_file
 
           wget -P $(Agent.BuildDirectory) https://raw.githubusercontent.com/qbeyond/terraform-tests/feature/init/.tflint.hcl
-    -task: CmdLine@2
+    - task: CmdLine@2
       inputs:
         script: |
         echo Look for tflint config
