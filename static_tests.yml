@@ -2,7 +2,7 @@ jobs:
   - job: Checkout_own_repository
     steps:
     - checkout: self
-      path: $(Agent.BuildDirectory)
+      path: $(Agent.BuildDirectory)/tflint-workspace
   - job: curl_tflint_config
     steps:
     - task: CmdLine@2
