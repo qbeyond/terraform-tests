@@ -1,12 +1,12 @@
 plugin "terraform" {
   enabled = true
   preset  = "recommended"
+}
 
-  rule "terraform_naming_convention" {
-    enabled = true
+rule "terraform_naming_convention" {
+  enabled = true
 
-    custom = "^[a-zA-Z]+([_-][a-zA-Z]+)*$"
-  }
+  custom = "^[a-zA-Z]+([_-][a-zA-Z]+)*$"
 }
 
 plugin "azurerm" {
