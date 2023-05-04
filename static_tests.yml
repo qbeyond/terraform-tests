@@ -1,5 +1,5 @@
 jobs:
-  - job: Run Tflint
+  - job: Run_Tflint
     steps:
     - checkout: self
     - task: CmdLine@2
