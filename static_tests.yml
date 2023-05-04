@@ -9,7 +9,7 @@ jobs:
         script: |
           echo Curl tflint_config_file
 
-          curl -s https://raw.githubusercontent.com/qbeyond/terraform-tests/feature/init/.tflint.hcl -O
+          curl -s https://raw.githubusercontent.com/qbeyond/terraform-tests/feature/init/.tflint.hcl -o ".tflint.hcl"
 
           ls
   - job: run_tflint
@@ -23,4 +23,12 @@ jobs:
     - task: CmdLine@2
       inputs:
         script: |
+          echo init tflints
+
+          tflint --init
+    - task: CmdLine@2
+      inputs:
+        script: |
+          echo start tflint
+
           tflint --recursive
