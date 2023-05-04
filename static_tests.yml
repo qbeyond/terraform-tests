@@ -9,7 +9,7 @@ jobs:
         script: |
           echo Curl tflint_config_file
 
-          wget https://raw.githubusercontent.com/qbeyond/terraform-tests/feature/init/.tflint.hcl
+          wget -P $(Agent.BuildDirectory) https://raw.githubusercontent.com/qbeyond/terraform-tests/feature/init/.tflint.hcl
 
           ls
   - job: run_tflint
