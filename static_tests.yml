@@ -1,10 +1,7 @@
 jobs:
-  - job: Checkout_own_repository
+  - job: Run_tflint
     steps:
     - checkout: self
-      path: $(Agent.BuildDirectory)/tflint-workspace
-  - job: curl_tflint_config
-    steps:
     - task: CmdLine@2
       inputs: 
         script: |
@@ -13,8 +10,6 @@ jobs:
           wget -P $(Agent.BuildDirectory)/tflint-workspace https://raw.githubusercontent.com/qbeyond/terraform-tests/feature/init/.tflint.hcl
 
           ls
-  - job: run_tflint
-    steps: 
     - task: CmdLine@2
       inputs: 
         script: |
