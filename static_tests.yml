@@ -12,7 +12,8 @@ jobs:
       inputs:
         script: |
           echo Look for tflint config
-
+          
+          ls
           cd $(Agent.BuildDirectory)
           ls
     - task: CmdLine@2
