@@ -5,7 +5,6 @@ plugin "terraform" {
 
 rule "terraform_naming_convention" {
   enabled = true
-  format = snake_case
   custom = "^[a-zA-Z]+([_-][a-zA-Z]+)*$"
 }
 
