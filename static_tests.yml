@@ -1,5 +1,5 @@
 jobs:
-  - job: Run_Tflint
+  - job: Run_tflint
     steps:
     - checkout: self
     - task: CmdLine@2
@@ -26,3 +26,8 @@ jobs:
           echo start tflint
 
           tflint --recursive
+  - job: Run_tfsec
+    steps:
+    - task: tfsec@1
+      inputs:
+        version: 'v1.26.0'
