@@ -1,8 +1,0 @@
-name: Test
-
-on: 
-  push:
-
-jobs:
-  static_tests:
-    uses: ./.github/workflows/static_test_workflow.yml

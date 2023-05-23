@@ -1,0 +1,5 @@
+name: Test
+
+jobs:
+  static_tests:
+    uses: ./.github/workflows/static_megalinter_workflow.yml
