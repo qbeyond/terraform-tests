@@ -2,4 +2,4 @@ name: Test
 
 jobs:
   static_tests:
-    uses: ./.github/workflows/static_megalinter_workflow.yml
+    uses: ./.github/workflows/qbeyond_iac_linter.yml

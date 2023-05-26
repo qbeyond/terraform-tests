@@ -1,0 +1,36 @@
+name: Qbeyond IAC Linter
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Pull MegaLinter
+      # Pull the MegaLinter Docker image from Docker Hub
+      run: docker pull qbeyond.azurecr.io/docs-megalinter-documentation:latest
+
+    - name: Run MegaLinter
+      # Run the MegaLinter on the codebase using the Docker image
+      run: |
+        docker run -v ${{ github.workspace }}:/tmp/lint \
+          -e GIT_AUTHORIZATION_BEARER=${{ secrets.GITHUB_TOKEN }} \
+          -e CI=true \
+          -e TF_BUILD=true \
+          -e SYSTEM_ACCESSTOKEN=${{ secrets.GITHUB_TOKEN }} \
+          -e SYSTEM_COLLECTIONURI=${{ github.server_url }} \
+          -e SYSTEM_PULLREQUEST_PULLREQUESTID=${{ github.event.pull_request.number }} \
+          -e SYSTEM_TEAMPROJECT="${{ github.repository }}" \
+          -e BUILD_BUILD_ID=${{ github.run_id }} \
+          -e BUILD_REPOSITORY_ID=${{ github.repository }} \
+          qbeyond.azurecr.io/docs-megalinter-documentation:latest
+
+    - name: Upload MegaLinter reports
+      # Upload the MegaLinter reports as an artifact
+      uses: actions/upload-artifact@v2
+      if: always()
+      with:
+        name: MegaLinterReport
+        path: ${{ github.workspace }}/megalinter-reports/
