@@ -14,7 +14,7 @@ jobs:
 
     - name: Pull MegaLinter
       # Pull the MegaLinter Docker image from Docker Hub
-      run: docker pull qbeyond.azurecr.io/docs-megalinter-documentation:latest
+      run: docker pull qbeyonddevops/docs-megalinter-iac
 
     - name: Run MegaLinter
       # Run the MegaLinter on the codebase using the Docker image
