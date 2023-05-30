@@ -2,8 +2,7 @@ name: Qbeyond-IAC-Linter
 
 on:
   workflow_call:
-      - master
-      - main
+
 
 jobs:
   lint:
@@ -11,7 +10,7 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Pull MegaLinter
       # Pull the MegaLinter Docker image from Docker Hub
