@@ -1,8 +1,7 @@
 name: Qbeyond-IAC-Linter
 
 on:
-  pull_request:
-    branches:
+  workflow_call:
       - master
       - main
 
