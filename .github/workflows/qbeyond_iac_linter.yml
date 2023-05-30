@@ -1,4 +1,4 @@
-name: Qbeyond IAC Linter
+name: Qbeyond-IAC-Linter
 
 on:
   pull_request:
