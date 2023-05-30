@@ -29,7 +29,7 @@ jobs:
           -e SYSTEM_TEAMPROJECT="${{ github.repository }}" \
           -e BUILD_BUILD_ID=${{ github.run_id }} \
           -e BUILD_REPOSITORY_ID=${{ github.repository }} \
-          qbeyond.azurecr.io/docs-megalinter-documentation:latest
+          qbeyonddevops/docs-megalinter-iac
 
     - name: Upload MegaLinter reports
       # Upload the MegaLinter reports as an artifact
