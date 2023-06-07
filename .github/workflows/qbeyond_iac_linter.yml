@@ -37,3 +37,11 @@ jobs:
       with:
         # Path to SARIF file relative to the root of the repository
         sarif_file: ${{ github.workspace }}/megalinter-reports/sarif
+
+    - name: Upload MegaLinter reports
+      # Upload the MegaLinter reports as an artifact
+      uses: actions/upload-artifact@v2
+      if: always()
+      with:
+        name: MegaLinterReport
+        path: ${{ github.workspace }}/megalinter-reports/
